@@ -1,0 +1,1 @@
+Velkommen til vår kunstutstilling!
