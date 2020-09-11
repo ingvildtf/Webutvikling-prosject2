@@ -1,21 +1,11 @@
 import React from 'react';
-import styled from 'styled-components';
-
-const Button = styled.button `
-color: blue;
-background-color: red;
-padding:10px 20px;
-
-`
-
-const Wrapper = styled.div`
-padding: 200px;
-`
+import Wrapper from './installation/Installation1';
+import Button from './components/Button';
 
 
 function Mainpage() {
     return (
-        <Wrapper className="mainpage">
+        <Wrapper >
             <p>heihei</p>
             <Button>knapp</Button>
         </Wrapper>
