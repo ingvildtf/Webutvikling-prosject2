@@ -1,17 +1,16 @@
-import React from 'react';
+import React from 'react'
 //import Button from './components/Button';
-import NavBar from './components/NavBar';
-import { BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import NavBar from './components/NavBar'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import styled from 'styled-components'
-import Installations from './components/Pages/Installations';
+import Installations from './components/Pages/Installations'
 
-const Wrapper = styled.div `
-
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: 'PT Sans', sans-serif;
-`;
+const Wrapper = styled.div`
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'PT Sans', sans-serif;
+`
 
 /*interface WrapperProps{
     area: string;
@@ -40,20 +39,19 @@ const Body = styled.body `
         "text";
 `;*/
 
-
 function Mainpage() {
-    return (
-       <Wrapper>
-            <Router>
-                <NavBar/>
-                <Switch>
-                     <Route exact  path='/home' component={Installations} />
-                     <Route path='/my-favorites' />
-                     <Route path='/settings'/>
-                </Switch>
-            </Router> 
-        </Wrapper>
-    )
+  return (
+    <Wrapper>
+      <Router>
+        <NavBar />
+        <Switch>
+          <Route exact path="/home" component={Installations} />
+          <Route path="/my-favorites" />
+          <Route path="/settings" />
+        </Switch>
+      </Router>
+    </Wrapper>
+  )
 }
 
-export default Mainpage;
+export default Mainpage
