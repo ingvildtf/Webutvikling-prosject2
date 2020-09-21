@@ -1,23 +1,27 @@
 import React from 'react'
-//import {Link} from 'react-router-dom'
 import styled from 'styled-components'
-//import {grid} from 'styled-components-grid'
 
 export const Wrapper = styled.div`
+padding: 20px 100px 0 100px;
   display: grid;
   background: #242424;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 10px;
   grid-template-areas:
-    'cake . .'
-    'svg . . '
-    '. . potato';
+    'title title title'
+    'svg text text'
+    'svg potato potato';
 `
-//${grid({})}
 
-const Text = styled.h3`
+const Title = styled.h3`
   color: white;
-  grid-area: cake;
+  grid-area: title;
+  align-self: center;
+  justify-self: center;
+`
+const Text = styled.p`
+    color: blue;
+    grid-area: text;
 `
 
 const Soething = styled.div`
@@ -70,7 +74,8 @@ function Installations() {
   return (
     <Wrapper>
       <Soething>Alex</Soething>
-      <Text>SVG</Text>
+      <Title>SVG</Title>
+      <Text>Her kommer poetry </Text>
       <SVG
         className="image"
         xmlns="http://www.w3.org/2000/svg"
