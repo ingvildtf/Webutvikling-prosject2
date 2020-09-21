@@ -2,34 +2,54 @@ import React from 'react'
 import styled from 'styled-components'
 
 export const Wrapper = styled.div`
-padding: 20px 100px 0 100px;
+  padding: 20px 5% 40px 5%;
   display: grid;
   background: #242424;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 2fr 3fr;
+  grid-template-rows: 1fr 6fr 1fr;
   grid-gap: 10px;
   grid-template-areas:
-    'title title title'
-    'svg text text'
-    'svg potato potato';
+    'title title'
+    'svg text'
+    'svg potato';
+
+  @media screen and (max-width: 1150px) {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 6fr 1fr 8fr;
+    grid-template-areas:
+      'title'
+      'svg'
+      'potato'
+      'text';
+  }
 `
 
 const Title = styled.h3`
+  padding: 20px;
   color: white;
   grid-area: title;
+  max-width: 100%;
   align-self: center;
   justify-self: center;
 `
 const Text = styled.p`
-    color: blue;
-    grid-area: text;
+  padding: 20px;
+  color: blue;
+  grid-area: text;
 `
 
 const Soething = styled.div`
+  padding: 20px;
   background-color: red;
   grid-area: potato;
+  max-width: 100%;
 `
 const SVG = styled.svg`
+  padding: 20px;
   grid-area: svg;
+  align-self: center;
+  justify-self: center;
+  max-width: 95%;
 
   .midCircle {
     fill: #024059;
@@ -67,6 +87,9 @@ const SVG = styled.svg`
 
   .rect4:hover {
     fill: #8090a6;
+  }
+  @media screen and (max-width: 1150) {
+    max-width: 100%;
   }
 `
 
