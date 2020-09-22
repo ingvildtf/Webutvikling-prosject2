@@ -1,15 +1,16 @@
 
 import React from 'react';
 
+const music = require('../music/dreams.mp3');
 
-class AudioPlayer extends React.Component {
+class Music2 extends React.Component {
   render() {
     return (
       <div>
-        <audio ref="audio_tag" src="./music/dreams.mp3" controls autoPlay loop/>
+        <audio src={music} controls loop/> 
       </div>
     );
   }
 }
 
-export default AudioPlayer;
+export default Music2;

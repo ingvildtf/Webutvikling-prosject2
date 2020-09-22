@@ -1,8 +1,10 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 
-const Text = () =>{
-  const url = "https://poetrydb.org/title/Ozymandias/lines.json";
+const title = 'Oh! Breathe Not His Name'
+
+const Poetry = () =>{
+  const url = "https://poetrydb.org/title/" + title;
   const [contents, setContents] = useState([{lines: [""]}]);
 
   useEffect(() => {
@@ -21,4 +23,4 @@ const Text = () =>{
   );
 
 }
-export default Text;
+export default Poetry;
