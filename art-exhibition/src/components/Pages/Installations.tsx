@@ -5,7 +5,7 @@ export const Wrapper = styled.div`
   padding: 20px 5% 40px 5%;
   display: grid;
   background: #242424;
-  grid-template-columns: 2fr 3fr;
+  grid-template-columns: 3fr 4fr;
   grid-template-rows: 1fr 6fr 1fr;
   grid-gap: 10px;
   grid-template-areas:
@@ -25,8 +25,8 @@ export const Wrapper = styled.div`
 `
 
 const Title = styled.h3`
-  padding: 20px;
   color: white;
+  font-size: min(max(20px, 6vw), 40px);
   grid-area: title;
   max-width: 100%;
   align-self: center;
@@ -42,14 +42,15 @@ const Soething = styled.div`
   padding: 20px;
   background-color: red;
   grid-area: potato;
-  max-width: 100%;
+  max-width: 90%;
 `
 const SVG = styled.svg`
-  padding: 20px;
+  margin: 0px;
   grid-area: svg;
   align-self: center;
   justify-self: center;
-  max-width: 95%;
+  max-width: 100%;
+  max-height: 100%;
 
   .midCircle {
     fill: #024059;
