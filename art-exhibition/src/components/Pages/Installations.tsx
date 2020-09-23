@@ -1,21 +1,21 @@
 import React from 'react'
 import styled from 'styled-components'
 import EasterStarsInstallation from '../../installation/easter/Easter_Stars'
-import StarsInstallation from '../../installation/space/Stars'
+//import StarsInstallation from '../../installation/space/Stars'
 import XmasStarsInstallation from '../../installation/xmas/Xmas_Stars'
 import Music2 from '../../music/music2'
-import Poetry from '../../poetry/Poetry'
+//import Poetry from '../../poetry/Poetry'
 
 export const Wrapper = styled.div`
   padding: 20px 5% 40px 5%;
   display: grid;
   background: #242424;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 2fr 1fr;
   grid-template-rows: 1fr 6fr 1fr;
   grid-gap: 10px;
   grid-template-areas:
     'title title'
-    'svg text'
+    'svg poem'
     'potato potato';
 
   @media screen and (max-width: 1150px) {
@@ -25,7 +25,7 @@ export const Wrapper = styled.div`
       'title'
       'svg'
       'potato'
-      'text';
+      'poem';
   }
 `
 
@@ -37,10 +37,11 @@ const Title = styled.h3`
   align-self: center;
   justify-self: center;
 `
-const Text = styled.p`
+
+const Text = styled.div`
   padding: 20px;
   color: blue;
-  grid-area: text;
+  grid-area: poem;
 `
 
 const Soething = styled.div`
@@ -50,10 +51,7 @@ const Soething = styled.div`
   max-width: 90%;
 `
 const SVG = styled.div`
-  margin: 0px;
   grid-area: svg;
-  align-self: center;
-  justify-self: center;
   max-width: 100%;
   max-height: 100%;
 `
@@ -66,11 +64,12 @@ function Installations() {
       </Soething>
       <Title>SVG</Title>
       <Text>
-        <Poetry></Poetry> {/* Poetry example*/}
+        Her kommer poems
+        {/*<Poetry></Poetry> {/* Poetry example*/}
       </Text>
       <SVG>
         {/* Star installation*/}
-        <XmasStarsInstallation></XmasStarsInstallation>
+        <EasterStarsInstallation />
         {/* <EasterStarsInstallation></EasterStarsInstallation>
         <StarsInstallation></StarsInstallation>*/}
       </SVG>
