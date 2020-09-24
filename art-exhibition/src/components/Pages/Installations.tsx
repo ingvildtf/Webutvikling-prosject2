@@ -11,7 +11,7 @@ import SunInstallation from '../../installation/space/Sun'
 //import XmasStarsInstallation from '../../installation/xmas/Xmas_Stars'
 import Music2 from '../../music/music2'
 import Button from '../Button'
-//import Poetry from '../../poetry/Poetry'
+import Poetry from '../../poetry/Poetry'
 
 export const Wrapper = styled.div`
   padding: 20px 5% 40px 5%;
@@ -53,7 +53,6 @@ const Text = styled.div`
 
 const Soething = styled.div`
   padding: 20px;
-  background-color: red;
   grid-area: potato;
   max-width: 90%;
 `
@@ -70,11 +69,35 @@ const Navigation = styled.div`
 `
 
 const images = [
-  { id: 1, imgtitle: EarthInstallation },
-  { id: 2, imgtitle: Rocket },
-  { id: 3, imgtitle: SatelliteInstallation },
-  { id: 4, imgtitle: StarsInstallation },
-  { id: 5, imgtitle: SunInstallation },
+  {
+    id: 1,
+    title: 'Earth',
+    imgtitle: EarthInstallation,
+    music: Music2,
+    poem: Poetry,
+  },
+  { id: 2, title: 'Rocket', imgtitle: Rocket, music: Music2, poem: Poetry },
+  {
+    id: 3,
+    title: 'Satellite',
+    imgtitle: SatelliteInstallation,
+    music: Music2,
+    poem: Poetry,
+  },
+  {
+    id: 4,
+    title: 'Stars',
+    imgtitle: StarsInstallation,
+    music: Music2,
+    poem: Poetry,
+  },
+  {
+    id: 5,
+    title: 'Sun',
+    imgtitle: SunInstallation,
+    music: Music2,
+    poem: Poetry,
+  },
 ]
 
 function Installations() {
@@ -97,11 +120,13 @@ function Installations() {
   return (
     <Wrapper>
       <Soething>
-        <Music2></Music2>
+        {images.map(index => (index.id === click ? <index.music /> : null))}
       </Soething>
-      <Title>SVG</Title>
+      <Title>
+        {images.map(index => (index.id === click ? index.title : null))}
+      </Title>
       <Text>
-        Her kommer poems
+        {images.map(index => (index.id === click ? <index.poem /> : null))}
         {/*<Poetry></Poetry> {/* Poetry example*/}
       </Text>
       <SVG>
