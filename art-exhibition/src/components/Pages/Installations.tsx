@@ -1,9 +1,16 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
+import { isConstructorDeclaration } from 'typescript'
 import EasterStarsInstallation from '../../installation/easter/Easter_Stars'
+import EarthInstallation from '../../installation/space/Earth'
+import Rocket from '../../installation/space/Rocket'
+import SatelliteInstallation from '../../installation/space/Satellite'
+import StarsInstallation from '../../installation/space/Stars'
+import SunInstallation from '../../installation/space/Sun'
 //import StarsInstallation from '../../installation/space/Stars'
-import XmasStarsInstallation from '../../installation/xmas/Xmas_Stars'
+//import XmasStarsInstallation from '../../installation/xmas/Xmas_Stars'
 import Music2 from '../../music/music2'
+import Button from '../Button'
 //import Poetry from '../../poetry/Poetry'
 
 export const Wrapper = styled.div`
@@ -16,14 +23,15 @@ export const Wrapper = styled.div`
   grid-template-areas:
     'title title'
     'svg poem'
-    'potato potato';
+    'buttons potato';
 
   @media screen and (max-width: 1150px) {
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 6fr 1fr 8fr;
+    grid-template-rows: 1fr 6fr 1fr 1fr 8fr;
     grid-template-areas:
       'title'
       'svg'
+      'buttons'
       'potato'
       'poem';
   }
@@ -37,7 +45,6 @@ const Title = styled.h3`
   align-self: center;
   justify-self: center;
 `
-
 const Text = styled.div`
   padding: 20px;
   color: blue;
@@ -56,7 +63,37 @@ const SVG = styled.div`
   max-height: 100%;
 `
 
+const Navigation = styled.div`
+  grid-area: buttons;
+  display: flex;
+  justify-content: center;
+`
+
+const images = [
+  { id: 1, imgtitle: EarthInstallation },
+  { id: 2, imgtitle: Rocket },
+  { id: 3, imgtitle: SatelliteInstallation },
+  { id: 4, imgtitle: StarsInstallation },
+  { id: 5, imgtitle: SunInstallation },
+]
+
 function Installations() {
+  const [click, setClick] = useState(1)
+  //Funksjon for å toggle mellom bildene, ved å trykke på next button
+  const handleNextClick = () => {
+    if (click < images.length) {
+      setClick(click + 1)
+    } else {
+      setClick(1)
+    }
+  }
+  const handleBackClick = () => {
+    if (click > 1) {
+      setClick(click - 1)
+    } else {
+      setClick(images.length)
+    }
+  }
   return (
     <Wrapper>
       <Soething>
@@ -68,11 +105,16 @@ function Installations() {
         {/*<Poetry></Poetry> {/* Poetry example*/}
       </Text>
       <SVG>
-        {/* Star installation*/}
-        <EasterStarsInstallation />
+        {images.map(index => (index.id === click ? <index.imgtitle /> : null))}
+        {/* Star installation*
+        <EasterStarsInstallation />*/}
         {/* <EasterStarsInstallation></EasterStarsInstallation>
         <StarsInstallation></StarsInstallation>*/}
       </SVG>
+      <Navigation>
+        <Button onClick={handleBackClick}>Back</Button>
+        <Button onClick={handleNextClick}>Next</Button>
+      </Navigation>
     </Wrapper>
   )
 }
