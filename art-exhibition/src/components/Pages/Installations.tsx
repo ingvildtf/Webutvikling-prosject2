@@ -68,6 +68,7 @@ const Navigation = styled.div`
   justify-content: center;
 `
 
+//liste som inneholder informasjon om installasjonene, her kan du eventuelt endre imgtitle til en verdi, isteden for hvert bilde og da kan du endre denne verdien ved å bruke state og switch
 const images = [
   {
     id: 1,
@@ -101,8 +102,9 @@ const images = [
 ]
 
 function Installations() {
+  //Setter state til clik, her kan man også bruke tekst verdier
   const [click, setClick] = useState(1)
-  //Funksjon for å toggle mellom bildene, ved å trykke på next button
+  //Funksjon for å toggle mellom bildene, ved å trykke på next/back button, vet å oppdatere staten til click
   const handleNextClick = () => {
     if (click < images.length) {
       setClick(click + 1)
@@ -120,6 +122,7 @@ function Installations() {
   return (
     <Wrapper>
       <Soething>
+        {/*går gjennom listen for å hente elementet som har samme id som clik  */}
         {images.map(index => (index.id === click ? <index.music /> : null))}
       </Soething>
       <Title>
@@ -131,12 +134,9 @@ function Installations() {
       </Text>
       <SVG>
         {images.map(index => (index.id === click ? <index.imgtitle /> : null))}
-        {/* Star installation*
-        <EasterStarsInstallation />*/}
-        {/* <EasterStarsInstallation></EasterStarsInstallation>
-        <StarsInstallation></StarsInstallation>*/}
       </SVG>
       <Navigation>
+        {/**knapper for next og tilbake */}
         <Button onClick={handleBackClick}>Back</Button>
         <Button onClick={handleNextClick}>Next</Button>
       </Navigation>
