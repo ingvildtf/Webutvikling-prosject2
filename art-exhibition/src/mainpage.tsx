@@ -4,6 +4,7 @@ import NavBar from './components/NavBar'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import styled from 'styled-components'
 import Installations from './components/Pages/Installations'
+import Settings from './components/Pages/Settings'
 
 const Wrapper = styled.div`
   box-sizing: border-box;
@@ -20,7 +21,7 @@ function Mainpage() {
         <Switch>
           <Route exact path="/home" component={Installations} />
           <Route path="/my-favorites" />
-          <Route path="/settings" />
+          <Route path="/settings" component={Settings} />
         </Switch>
       </Router>
     </Wrapper>
