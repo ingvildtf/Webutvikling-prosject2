@@ -51,7 +51,7 @@ const Text = styled.div`
   grid-area: poem;
 `
 
-const Soething = styled.div`
+const Something = styled.div`
   padding: 20px;
   grid-area: potato;
   max-width: 90%;
@@ -119,12 +119,13 @@ function Installations() {
       setClick(images.length)
     }
   }
+ 
   return (
     <Wrapper>
-      <Soething>
+      <Something>
         {/*går gjennom listen for å hente elementet som har samme id som clik  */}
         {images.map(index => (index.id === click ? <index.music /> : null))}
-      </Soething>
+      </Something>
       <Title>
         {images.map(index => (index.id === click ? index.title : null))}
       </Title>
