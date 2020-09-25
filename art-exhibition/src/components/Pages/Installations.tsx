@@ -1,15 +1,25 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
+
 import EarthInstallation from '../../installation/space/Earth'
 import Rocket from '../../installation/space/Rocket'
 import SatelliteInstallation from '../../installation/space/Satellite'
 import StarsInstallation from '../../installation/space/Stars'
 import SunInstallation from '../../installation/space/Sun'
-//import StarsInstallation from '../../installation/space/Stars'
-//import XmasStarsInstallation from '../../installation/xmas/Xmas_Stars'
 import Music2 from '../../music/music2'
 import Button from '../Button'
+import EasterEarthInstallation from '../../installation/easter/Easter_Earth'
+import SatelliteEasterInstallation from '../../installation/easter/Easter_Satellite'
+import EasterSunInstallation from '../../installation/easter/Easter_Sun'
+import EasterStarRocket from '../../installation/easter/Easter_StarRocket'
+import XmasEarthInstallation from '../../installation/xmas/Xmas_Earth'
+import XmasRocketInstallation from '../../installation/xmas/Xmas_Rocket'
+import SatelliteXmasInstallation from '../../installation/xmas/Xmas_Satellite'
+import XmasStarsInstallation from '../../installation/xmas/Xmas_Stars'
+import XmasSunInstallation from '../../installation/xmas/Xmas_Sun'
+
 import DisplayPoem from '../../DisplayPoem'
+import EasterStarsInstallation from '../../installation/easter/Easter_Stars'
 
 export const Wrapper = styled.div`
   padding: 20px 5% 40px 5%;
@@ -49,7 +59,7 @@ const Text = styled.div`
   grid-area: poem;
 `
 
-const Soething = styled.div`
+const Something = styled.div`
   padding: 20px;
   grid-area: potato;
   max-width: 90%;
@@ -66,51 +76,64 @@ const Navigation = styled.div`
   justify-content: center;
 `
 
-//liste som inneholder informasjon om installasjonene, her kan du eventuelt endre imgtitle til en verdi, isteden for hvert bilde og da kan du endre denne verdien ved å bruke state og switch
-const images = [
-  {
-    id: 1,
-    title: 'Earth',
-    imgtitle: EarthInstallation,
-    music: Music2,
-    poem: 'https://poetrydb.org/title,linecount/earth;12/lines',
-  },
-  {
-    id: 2,
-    title: 'Rocket',
-    imgtitle: Rocket,
-    music: Music2,
-    poem: 'https://poetrydb.org/lines,linecount/moon;12/lines',
-  },
-  {
-    id: 3,
-    title: 'Satellite',
-    imgtitle: SatelliteInstallation,
-    music: Music2,
-    poem: 'https://poetrydb.org/lines,linecount/sky;12/lines',
-  },
-  {
-    id: 4,
-    title: 'Stars',
-    imgtitle: StarsInstallation,
-    music: Music2,
-    poem: 'https://poetrydb.org/title,linecount/stars;12/lines',
-  },
-  {
-    id: 5,
-    title: 'Sun',
-    imgtitle: SunInstallation,
-    music: Music2,
-    poem: 'https://poetrydb.org/title,linecount/sun;12/lines',
-  },
-]
-
 function Installations() {
+  const images = {
+    earth: [EarthInstallation, EasterEarthInstallation, XmasEarthInstallation],
+    rocket: [Rocket, EasterStarRocket, XmasRocketInstallation],
+    satellite: [
+      SatelliteInstallation,
+      SatelliteEasterInstallation,
+      SatelliteXmasInstallation,
+    ],
+    stars: [StarsInstallation, EasterStarsInstallation, XmasStarsInstallation],
+    sun: [SunInstallation, EasterSunInstallation, XmasSunInstallation],
+  }
+
+  const [theme, setTheme] = useState(0)
+
+  //liste som inneholder informasjon om installasjonene, her kan du eventuelt endre imgtitle til en verdi, isteden for hvert bilde og da kan du endre denne verdien ved å bruke state og switch
+  const installations = [
+    {
+      id: 1,
+      title: 'Earth',
+      imgtitle: images.earth[theme],
+      music: Music2,
+      poem: 'https://poetrydb.org/title,linecount/earth;12/lines',
+    },
+    {
+      id: 2,
+      title: 'Rocket',
+      imgtitle: images.rocket[theme],
+      music: Music2,
+      poem: 'https://poetrydb.org/lines,linecount/moon;12/lines',
+    },
+    {
+      id: 3,
+      title: 'Satellite',
+      imgtitle: images.satellite[theme],
+      music: Music2,
+      poem: 'https://poetrydb.org/lines,linecount/sky;12/lines',
+    },
+    {
+      id: 4,
+      title: 'Stars',
+      imgtitle: images.stars[theme],
+      music: Music2,
+      poem: 'https://poetrydb.org/title,linecount/stars;12/lines',
+    },
+    {
+      id: 5,
+      title: 'Sun',
+      imgtitle: images.sun[theme],
+      music: Music2,
+      poem: 'https://poetrydb.org/title,linecount/sun;12/lines',
+    },
+  ]
   //Setter state til clik, her kan man også bruke tekst verdier
   const [click, setClick] = useState(1)
   //Funksjon for å toggle mellom bildene, ved å trykke på next/back button, vet å oppdatere staten til click
   const handleNextClick = () => {
-    if (click < images.length) {
+    if (click < installations.length) {
       setClick(click + 1)
     } else {
       setClick(1)
@@ -120,20 +143,23 @@ function Installations() {
     if (click > 1) {
       setClick(click - 1)
     } else {
-      setClick(images.length)
+      setClick(installations.length)
     }
   }
+
   return (
     <Wrapper>
-      <Soething>
+      <Something>
         {/*går gjennom listen for å hente elementet som har samme id som clik  */}
-        {images.map(index => (index.id === click ? <index.music /> : null))}
-      </Soething>
+        {installations.map(index =>
+          index.id === click ? <index.music /> : null
+        )}
+      </Something>
       <Title>
-        {images.map(index => (index.id === click ? index.title : null))}
+        {installations.map(index => (index.id === click ? index.title : null))}
       </Title>
       <Text>
-        {images.map(index =>
+        {installations.map(index =>
           index.id === click ? (
             <DisplayPoem poemTheme={index.poem as string} />
           ) : null
@@ -141,12 +167,17 @@ function Installations() {
         {/*<Poetry></Poetry> {/* Poetry example*/}
       </Text>
       <SVG>
-        {images.map(index => (index.id === click ? <index.imgtitle /> : null))}
+        {installations.map(index =>
+          index.id === click ? <index.imgtitle /> : null
+        )}
       </SVG>
       <Navigation>
         {/**knapper for next og tilbake */}
         <Button onClick={handleBackClick}>Back</Button>
         <Button onClick={handleNextClick}>Next</Button>
+        <Button onClick={() => setTheme(0)}>Space</Button>
+        <Button onClick={() => setTheme(1)}>Easter</Button>
+        <Button onClick={() => setTheme(2)}>Xmas</Button>
       </Navigation>
     </Wrapper>
   )
