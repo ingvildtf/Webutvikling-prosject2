@@ -1,0 +1,48 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`First snapshot test 1`] = `
+<div
+  className="sc-dIsAE ffmlHM"
+>
+  <div
+    className="sc-bdnylx RObyp"
+  >
+    <div
+      className="sc-gtssRu iBNPLn navbar-container container"
+    >
+      <a
+        className="nav-logo"
+        href="/"
+        onClick={[Function]}
+      >
+        SPACE
+      </a>
+      <ul
+        className="nav-menu"
+      >
+        <a
+          className="nav-links"
+          href="/home"
+          onClick={[Function]}
+        >
+          Home
+        </a>
+        <a
+          className="nav-links"
+          href="/my-favorites"
+          onClick={[Function]}
+        >
+          My Favorites
+        </a>
+        <a
+          className="nav-links"
+          href="/settings"
+          onClick={[Function]}
+        >
+          Settings
+        </a>
+      </ul>
+    </div>
+  </div>
+</div>
+`;
