@@ -1,7 +1,5 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
-import { isConstructorDeclaration } from 'typescript'
-import EasterStarsInstallation from '../../installation/easter/Easter_Stars'
 import EarthInstallation from '../../installation/space/Earth'
 import Rocket from '../../installation/space/Rocket'
 import SatelliteInstallation from '../../installation/space/Satellite'
@@ -11,7 +9,7 @@ import SunInstallation from '../../installation/space/Sun'
 //import XmasStarsInstallation from '../../installation/xmas/Xmas_Stars'
 import Music2 from '../../music/music2'
 import Button from '../Button'
-import Poetry from '../../poetry/Poetry'
+import DisplayPoem from '../../DisplayPoem'
 
 export const Wrapper = styled.div`
   padding: 20px 5% 40px 5%;
@@ -75,29 +73,35 @@ const images = [
     title: 'Earth',
     imgtitle: EarthInstallation,
     music: Music2,
-    poem: Poetry,
+    poem: 'https://poetrydb.org/title,linecount/earth;12/lines',
   },
-  { id: 2, title: 'Rocket', imgtitle: Rocket, music: Music2, poem: Poetry },
+  {
+    id: 2,
+    title: 'Rocket',
+    imgtitle: Rocket,
+    music: Music2,
+    poem: 'https://poetrydb.org/lines,linecount/moon;12/lines',
+  },
   {
     id: 3,
     title: 'Satellite',
     imgtitle: SatelliteInstallation,
     music: Music2,
-    poem: Poetry,
+    poem: 'https://poetrydb.org/lines,linecount/sky;12/lines',
   },
   {
     id: 4,
     title: 'Stars',
     imgtitle: StarsInstallation,
     music: Music2,
-    poem: Poetry,
+    poem: 'https://poetrydb.org/title,linecount/stars;12/lines',
   },
   {
     id: 5,
     title: 'Sun',
     imgtitle: SunInstallation,
     music: Music2,
-    poem: Poetry,
+    poem: 'https://poetrydb.org/title,linecount/sun;12/lines',
   },
 ]
 
@@ -129,7 +133,11 @@ function Installations() {
         {images.map(index => (index.id === click ? index.title : null))}
       </Title>
       <Text>
-        {images.map(index => (index.id === click ? <index.poem /> : null))}
+        {images.map(index =>
+          index.id === click ? (
+            <DisplayPoem poemTheme={index.poem as string} />
+          ) : null
+        )}
         {/*<Poetry></Poetry> {/* Poetry example*/}
       </Text>
       <SVG>
