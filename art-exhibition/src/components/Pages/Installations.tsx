@@ -89,7 +89,14 @@ function Installations() {
     sun: [SunInstallation, EasterSunInstallation, XmasSunInstallation],
   }
 
-  const [theme, setTheme] = useState(0)
+  //lagrer hvilket tema man har huket av i session storage
+  const index =
+    sessionStorage.getItem('theme') === null
+      ? 0
+      : Number(sessionStorage.getItem('theme'))
+
+  const [theme, setTheme] = useState(index)
+  sessionStorage.setItem('theme', String(theme))
 
   //liste som inneholder informasjon om installasjonene, her kan du eventuelt endre imgtitle til en verdi, isteden for hvert bilde og da kan du endre denne verdien ved å bruke state og switch
   const installations = [
