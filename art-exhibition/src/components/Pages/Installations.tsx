@@ -85,18 +85,25 @@ function Installations() {
     sun: [SunInstallation, EasterSunInstallation, XmasSunInstallation],
   }
 
+  
+
   const index = sessionStorage.getItem('theme') === null ? 0: Number(sessionStorage.getItem('theme'))
   const [theme, setTheme] = useState(index)
   sessionStorage.setItem('theme', String(theme))
-  
-  const FavoriteProvider = (props) =>{
-    useEffect(()=>{
-      localStorage.setItem('earth',JSON.stringify(theme));
-    },[theme]);
-    
-  }
+
+
 
   
+ //const favorite =  localStorage.getItem(click)
+ const favorite = localStorage.getItem('image') === undefined ? '': localStorage.getItem('image')
+ const [image, setFavorite] = useState(String(favorite))
+ localStorage.setItem('image', image)
+
+ console.log(sessionStorage.getItem('theme'));
+  console.log(localStorage.getItem('image'));
+
+  
+
 
   //liste som inneholder informasjon om installasjonene, her kan du eventuelt endre imgtitle til en verdi, isteden for hvert bilde og da kan du endre denne verdien ved å bruke state og switch
   const installations = [
@@ -182,9 +189,10 @@ function Installations() {
         {/**knapper for next og tilbake */}
         <Button onClick={handleBackClick}>Back</Button>
         <Button onClick={handleNextClick}>Next</Button>
-        <Button onClick={() => setTheme(0)}>Space</Button>
+        <Button onClick={() => setTheme(0)}>Space</Button>s
         <Button onClick={() => setTheme(1)}>Easter</Button>
         <Button onClick={() => setTheme(2)}>Xmas</Button>
+        <Button onClick={() => setFavorite(String(installations[click-1].imgtitle))}>Favoritt</Button>
       </Navigation>
     </Wrapper>
   )
