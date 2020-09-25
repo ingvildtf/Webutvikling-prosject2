@@ -1,17 +1,13 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
-import { isConstructorDeclaration } from 'typescript'
-import EasterStarsInstallation from '../../installation/easter/Easter_Stars'
+
 import EarthInstallation from '../../installation/space/Earth'
 import Rocket from '../../installation/space/Rocket'
 import SatelliteInstallation from '../../installation/space/Satellite'
 import StarsInstallation from '../../installation/space/Stars'
 import SunInstallation from '../../installation/space/Sun'
-//import StarsInstallation from '../../installation/space/Stars'
-//import XmasStarsInstallation from '../../installation/xmas/Xmas_Stars'
 import Music2 from '../../music/music2'
 import Button from '../Button'
-import Poetry from '../../poetry/Poetry'
 import EasterEarthInstallation from '../../installation/easter/Easter_Earth'
 import SatelliteEasterInstallation from '../../installation/easter/Easter_Satellite'
 import EasterSunInstallation from '../../installation/easter/Easter_Sun'
@@ -21,6 +17,9 @@ import XmasRocketInstallation from '../../installation/xmas/Xmas_Rocket'
 import SatelliteXmasInstallation from '../../installation/xmas/Xmas_Satellite'
 import XmasStarsInstallation from '../../installation/xmas/Xmas_Stars'
 import XmasSunInstallation from '../../installation/xmas/Xmas_Sun'
+
+import DisplayPoem from '../../DisplayPoem'
+import EasterStarsInstallation from '../../installation/easter/Easter_Stars'
 
 export const Wrapper = styled.div`
   padding: 20px 5% 40px 5%;
@@ -79,7 +78,6 @@ const Navigation = styled.div`
 
 function Installations() {
   const images = {
-    index: 0,
     earth: [EarthInstallation, EasterEarthInstallation, XmasEarthInstallation],
     rocket: [Rocket, EasterStarRocket, XmasRocketInstallation],
     satellite: [
@@ -100,35 +98,35 @@ function Installations() {
       title: 'Earth',
       imgtitle: images.earth[theme],
       music: Music2,
-      poem: Poetry,
+      poem: 'https://poetrydb.org/title,linecount/earth;12/lines',
     },
     {
       id: 2,
       title: 'Rocket',
       imgtitle: images.rocket[theme],
       music: Music2,
-      poem: Poetry,
+      poem: 'https://poetrydb.org/lines,linecount/moon;12/lines',
     },
     {
       id: 3,
       title: 'Satellite',
       imgtitle: images.satellite[theme],
       music: Music2,
-      poem: Poetry,
+      poem: 'https://poetrydb.org/lines,linecount/sky;12/lines',
     },
     {
       id: 4,
       title: 'Stars',
       imgtitle: images.stars[theme],
       music: Music2,
-      poem: Poetry,
+      poem: 'https://poetrydb.org/title,linecount/stars;12/lines',
     },
     {
       id: 5,
       title: 'Sun',
       imgtitle: images.sun[theme],
       music: Music2,
-      poem: Poetry,
+      poem: 'https://poetrydb.org/title,linecount/sun;12/lines',
     },
   ]
   //Setter state til clik, her kan man også bruke tekst verdier
@@ -162,7 +160,9 @@ function Installations() {
       </Title>
       <Text>
         {installations.map(index =>
-          index.id === click ? <index.poem /> : null
+          index.id === click ? (
+            <DisplayPoem poemTheme={index.poem as string} />
+          ) : null
         )}
         {/*<Poetry></Poetry> {/* Poetry example*/}
       </Text>
