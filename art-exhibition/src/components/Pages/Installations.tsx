@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 
 import EarthInstallation from '../../installation/space/Earth'
@@ -80,23 +80,23 @@ function Installations() {
   const images = {
     earth: [EarthInstallation, EasterEarthInstallation, XmasEarthInstallation],
     rocket: [Rocket, EasterStarRocket, XmasRocketInstallation],
-    satellite: [
-      SatelliteInstallation,
-      SatelliteEasterInstallation,
-      SatelliteXmasInstallation,
-    ],
+    satellite: [SatelliteInstallation,SatelliteEasterInstallation,SatelliteXmasInstallation,],
     stars: [StarsInstallation, EasterStarsInstallation, XmasStarsInstallation],
     sun: [SunInstallation, EasterSunInstallation, XmasSunInstallation],
   }
 
-  //lagrer hvilket tema man har huket av i session storage
-  const index =
-    sessionStorage.getItem('theme') === null
-      ? 0
-      : Number(sessionStorage.getItem('theme'))
-
+  const index = sessionStorage.getItem('theme') === null ? 0: Number(sessionStorage.getItem('theme'))
   const [theme, setTheme] = useState(index)
   sessionStorage.setItem('theme', String(theme))
+  
+  const FavoriteProvider = (props) =>{
+    useEffect(()=>{
+      localStorage.setItem('earth',JSON.stringify(theme));
+    },[theme]);
+    
+  }
+
+  
 
   //liste som inneholder informasjon om installasjonene, her kan du eventuelt endre imgtitle til en verdi, isteden for hvert bilde og da kan du endre denne verdien ved å bruke state og switch
   const installations = [
