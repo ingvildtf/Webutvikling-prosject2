@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom'
 //import Button from './Button';
 import styled from 'styled-components'
@@ -28,7 +28,7 @@ const Container = styled.div`
 
   .nav-logo {
     color: #fff;
-    cusor: pointer;
+    cursor: pointer;
     text-decoration: none;
     font-size: 2rem;
     padding-top: 15px;
@@ -36,14 +36,14 @@ const Container = styled.div`
 
   .nav-menu {
     display: flex;
-    allign-items: center;
+    align-items: center;
     justify-content: center;
-    text-allign: center;
+    text-align: center;
   }
 
   .nav-links {
     display: flex;
-    allign-items: center;
+    align-items: center;
     text-decoration: none;
     padding: 0.5rem 1rem;
     height: 100%;
@@ -57,11 +57,6 @@ const Container = styled.div`
 `
 
 function Navbar() {
-  //Bruker hooks til å sette staten til knappen
-  const [click, setClick] = useState(false)
-
-  const handleClick = () => setClick(!click)
-
   return (
     //lager navigasjonsbaren øverst på siden
     <Wrapper>
@@ -71,8 +66,8 @@ function Navbar() {
         </Link>
 
         {/**Setter navigasjonen til å være drop meny når siden blir under en størrelse */}
-        <ul className={click ? 'nav-menu active' : 'nav-menu'}>
-          <Link to="/home" className="nav-links">
+        <ul className={'nav-menu'}>
+          <Link to="/" className="nav-links">
             Home
           </Link>
 
