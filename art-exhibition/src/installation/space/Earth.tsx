@@ -52,3 +52,4 @@ class EarthInstallation extends React.Component{
 }
 
 export default EarthInstallation; 
+

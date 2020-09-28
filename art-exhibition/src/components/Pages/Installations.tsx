@@ -99,9 +99,6 @@ function Installations() {
  const [image, setFavorite] = useState(String(favorite))
  localStorage.setItem('image', image)
 
- console.log(sessionStorage.getItem('theme'));
-  console.log(localStorage.getItem('image'));
-
   
 
 
@@ -166,7 +163,7 @@ function Installations() {
       <Something>
         {/*går gjennom listen for å hente elementet som har samme id som clik  */}
         {installations.map(index =>
-          index.id === click ? <index.music /> : null
+          index.id === click ? <index.music key={index.id}/> : null
         )}
       </Something>
       <Title>
@@ -175,14 +172,14 @@ function Installations() {
       <Text>
         {installations.map(index =>
           index.id === click ? (
-            <DisplayPoem poemTheme={index.poem as string} />
+            <DisplayPoem poemTheme={index.poem as string } key={index.id}/>
           ) : null
         )}
         {/*<Poetry></Poetry> {/* Poetry example*/}
       </Text>
       <SVG>
         {installations.map(index =>
-          index.id === click ? <index.imgtitle /> : null
+          index.id === click ? <index.imgtitle key={index.id}  /> : null
         )}
       </SVG>
       <Navigation>
