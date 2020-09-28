@@ -1,5 +1,5 @@
 import React from 'react'
-import {ReactComponent as Earth} from '../space/earth.svg'
+import { ReactComponent as Earth } from '../space/earth.svg'
 import styled from 'styled-components'
 import { keyframes } from 'styled-components'
 
@@ -10,7 +10,7 @@ const rotate = keyframes`
     to   { 
         transform: rotate(360deg) translateX(300px) rotate(-360deg); 
         }
-`;
+`
 
 const pulse = keyframes`
 0% {
@@ -25,31 +25,32 @@ const pulse = keyframes`
   fill:#EAA041;
   stroke-width:10px
 }
-`;
-
+`
 
 const StyledEarth = styled(Earth)`
- 
-    .earth{
-        animation: ${rotate} infinite 5s linear;
-        display: block;
-        margin: auto;
-    }
-    #orange{
+  .earth {
+    animation: ${rotate} infinite 5s linear;
+    display: block;
+    margin: auto;
+  }
+  #orange {
     animation: ${pulse} infinite 4s linear;
-    
-    }
-`;
+  }
+`
 
-class EarthInstallation extends React.Component{
-    render(){
-    return(
-        <div>
-            <StyledEarth/>
-        </div>
-    );
-    }
+class EarthInstallation extends React.Component {
+  render() {
+    return (
+      <div>
+        <StyledEarth />
+      </div>
+    )
+  }
 }
 
+<<<<<<< HEAD
 export default EarthInstallation; 
 
+=======
+export default EarthInstallation
+>>>>>>> develop
