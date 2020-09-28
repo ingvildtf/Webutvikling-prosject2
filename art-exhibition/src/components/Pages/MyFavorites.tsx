@@ -24,6 +24,8 @@ const Wrapper = styled.div`
   flex-direction: column;
   background: #0b1226;
   padding-bottom: 20px;
+  max-width: 100%;
+  height: 100vh;
 `
 
 const Title = styled.h1`

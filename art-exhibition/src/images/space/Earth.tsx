@@ -48,9 +48,4 @@ class EarthInstallation extends React.Component {
   }
 }
 
-<<<<<<< HEAD
-export default EarthInstallation; 
-
-=======
 export default EarthInstallation
->>>>>>> develop

@@ -6,7 +6,6 @@ import styled from 'styled-components'
 import Installations from './components/Pages/Installations'
 import MyFavorites from './components/Pages/MyFavorites'
 
-
 const Wrapper = styled.div`
   box-sizing: border-box;
   margin: 0;
@@ -36,7 +35,7 @@ function Mainpage() {
         <Field area="content">
           <Switch>
             <Route exact path="/" component={Installations} />
-            <Route path="/my-favorites" component={MyFavorites}/>
+            <Route path="/my-favorites" component={MyFavorites} />
           </Switch>
         </Field>
       </Router>
