@@ -26,6 +26,9 @@ const Wrapper = styled.div`
   padding-bottom: 20px;
   max-width: 100%;
   height: 120vh;
+  @media screen and (max-width: 1050px) {
+    height: auto;
+  }
 `
 
 const Title = styled.h1`
