@@ -1,0 +1,179 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`First snapshot test 1`] = `
+Array [
+  " ",
+  <div
+    className="sc-cxNIbT cnhoeV"
+  >
+    <div
+      className="sc-lmgQde eIXylf"
+    >
+      <div
+        className="sc-bdnylx eHEgeA"
+      >
+        <div
+          className="sc-gtssRu kmgSDO navbar-container container"
+        >
+          <a
+            className="logo"
+            href="/"
+            onClick={[Function]}
+          >
+            SPACE ART
+          </a>
+          <a
+            className="link"
+            href="/my-favorites"
+            onClick={[Function]}
+          >
+            My Favorites
+          </a>
+        </div>
+      </div>
+    </div>
+    <div
+      className="sc-lmgQde cpoeXm"
+    >
+      <div
+        className="sc-hBMVcZ ftcjow"
+        style={
+          Object {
+            "background": "#0B1226",
+            "color": "white",
+          }
+        }
+      >
+        <h3
+          className="sc-fnVYJo eoqoju"
+          style={
+            Object {
+              "background": "#0B1226",
+              "color": "white",
+            }
+          }
+        >
+          Earth
+        </h3>
+        <div
+          className="sc-iemXMA hRgXLv"
+        >
+          <div>
+            <svg
+              className="sc-dlnjPT kipuPJ"
+            >
+              earth.svg
+            </svg>
+          </div>
+        </div>
+        <div
+          className="sc-fFSRdu jTLrLq"
+          style={
+            Object {
+              "background": "#0B1226",
+              "color": "white",
+            }
+          }
+        >
+          <div>
+            <br />
+          </div>
+        </div>
+        <div
+          className="sc-bkbjAj kFhcbs"
+        >
+          <div>
+            <audio
+              controls={true}
+              loop={true}
+              src="earth.mp3"
+            />
+          </div>
+        </div>
+        <div
+          className="sc-dIvqjp kFlQOd"
+          style={
+            Object {
+              "background": "#0B1226",
+              "color": "white",
+            }
+          }
+        >
+          <button
+            className="sc-hHEjAm SmlJl"
+            onClick={[Function]}
+            style={
+              Object {
+                "background": "#54728C",
+                "color": "white",
+              }
+            }
+          >
+            Back
+          </button>
+          <button
+            className="sc-hHEjAm SmlJl"
+            onClick={[Function]}
+            style={
+              Object {
+                "background": "#54728C",
+                "color": "white",
+              }
+            }
+          >
+            Next
+          </button>
+          <button
+            className="sc-hHEjAm SmlJl"
+            onClick={[Function]}
+            style={
+              Object {
+                "background": "#54728C",
+                "color": "white",
+              }
+            }
+          >
+            Favoritt
+          </button>
+          <button
+            className="sc-hHEjAm SmlJl"
+            onClick={[Function]}
+            style={
+              Object {
+                "background": "#54728C",
+                "color": "white",
+              }
+            }
+          >
+            Space
+          </button>
+          <button
+            className="sc-hHEjAm SmlJl"
+            onClick={[Function]}
+            style={
+              Object {
+                "background": "#54728C",
+                "color": "white",
+              }
+            }
+          >
+            Easter
+          </button>
+          <button
+            className="sc-hHEjAm SmlJl"
+            onClick={[Function]}
+            style={
+              Object {
+                "background": "#54728C",
+                "color": "white",
+              }
+            }
+          >
+            Xmas
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>,
+]
+`;
