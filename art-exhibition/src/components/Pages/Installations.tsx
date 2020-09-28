@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 
+//Import of Installations
 import EarthInstallation from '../../images/space/Earth'
 import Rocket from '../../images/space/Rocket'
 import SatelliteInstallation from '../../images/space/Satellite'
 import StarsInstallation from '../../images/space/Stars'
 import SunInstallation from '../../images/space/Sun'
-import Music2 from '../../music/music2'
 import EasterEarthInstallation from '../../images/easter/Easter_Earth'
 import SatelliteEasterInstallation from '../../images/easter/Easter_Satellite'
 import EasterSunInstallation from '../../images/easter/Easter_Sun'
@@ -16,9 +16,18 @@ import XmasRocketInstallation from '../../images/xmas/Xmas_Rocket'
 import SatelliteXmasInstallation from '../../images/xmas/Xmas_Satellite'
 import XmasStarsInstallation from '../../images/xmas/Xmas_Stars'
 import XmasSunInstallation from '../../images/xmas/Xmas_Sun'
-
-import DisplayPoem from '../../DisplayPoem'
 import EasterStarsInstallation from '../../images/easter/Easter_Stars'
+
+//Import of poem
+import DisplayPoem from '../../DisplayPoem'
+
+//Import of music
+import SunMusic from '../../music/SunMusic'
+import SatelliteMusic from '../../music/SatelliteMusic'
+import StarsMusic from '../../music/StarsMusic'
+import RocketMusic from '../../music/RocketMusic'
+import EarthMusic from '../../music/EarthMusic'
+
 import { ThemeContext, themes } from '../../DisplayTheme'
 
 interface ThemeProps {
@@ -117,35 +126,35 @@ function Installations() {
       id: 1,
       title: 'Earth',
       imgtitle: images.earth[imageTheme],
-      music: Music2,
+      music: EarthMusic,
       poem: 'https://poetrydb.org/title,linecount/earth;12/lines',
     },
     {
       id: 2,
       title: 'Rocket',
       imgtitle: images.rocket[imageTheme],
-      music: Music2,
+      music: RocketMusic,
       poem: 'https://poetrydb.org/lines,linecount/moon;12/lines',
     },
     {
       id: 3,
       title: 'Satellite',
       imgtitle: images.satellite[imageTheme],
-      music: Music2,
+      music: SatelliteMusic ,
       poem: 'https://poetrydb.org/lines,linecount/sky;12/lines',
     },
     {
       id: 4,
       title: 'Stars',
       imgtitle: images.stars[imageTheme],
-      music: Music2,
+      music: StarsMusic,
       poem: 'https://poetrydb.org/title,linecount/stars;12/lines',
     },
     {
       id: 5,
       title: 'Sun',
       imgtitle: images.sun[imageTheme],
-      music: Music2,
+      music: SunMusic,
       poem: 'https://poetrydb.org/title,linecount/sun;12/lines',
     },
   ]
