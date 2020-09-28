@@ -26,10 +26,12 @@ interface ThemeProps {
 }
 
 export const Wrapper = styled.div<ThemeProps>`
-  padding: 20px 5% 40px 5%;
+  margin: 0;
+  padding: 0 5% 0 5%;
   display: grid;
   background: #242424;
-  grid-template-columns: repeat(auto-fit, 1fr);
+  grid-template-rows: min-content min-content auto;
+  height: 90vh;
   grid-gap: 10px;
   grid-template-areas:
     'title   title'
@@ -37,8 +39,9 @@ export const Wrapper = styled.div<ThemeProps>`
     'buttons sound';
 
   @media screen and (max-width: 1150px) {
-    grid-template-columns: repeat(auto-fit, 1fr);
-    grid-template-rows: repeat(auto-fit, 1fr);
+    grid-template-rows: repeat(5, min-content);
+    height: auto;
+    overflow: auto;
     grid-template-areas:
       'title'
       'svg'
@@ -50,14 +53,15 @@ export const Wrapper = styled.div<ThemeProps>`
 
 const Title = styled.h3<ThemeProps>`
   color: white;
-  font-size: min(max(20px, 6vw), 40px);
+  font-size: min(max(30px, 6vw), 40px);
   grid-area: title;
-  max-width: 100%;
+  margin-bottom: 50px;
   align-self: center;
   justify-self: center;
 `
 const Text = styled.div<ThemeProps>`
   padding: 20px;
+  font-size: min(max(12px, 6vw), 16px);
   color: blue;
   grid-area: poem;
   text-align: center;
@@ -66,12 +70,11 @@ const Text = styled.div<ThemeProps>`
 const Sound = styled.div`
   padding: 20px;
   grid-area: sound;
-  max-width: 90%;
   justify-self: center;
+  align-self: center;
 `
 const SVG = styled.div`
   grid-area: svg;
-  max-width: 100%;
   max-height: 100vh;
 `
 
@@ -79,6 +82,7 @@ const Navigation = styled.div<ThemeProps>`
   grid-area: buttons;
   display: flex;
   justify-content: space-between;
+  margin: 20px;
 `
 const Button = styled.button<ThemeProps>`
   padding: 10px;

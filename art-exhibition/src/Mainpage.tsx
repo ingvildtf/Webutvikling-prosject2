@@ -11,8 +11,6 @@ const Wrapper = styled.div`
   padding: 0;
   font-family: 'PT Sans', sans-serif;
   display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr;
 
   grid-template-areas:
     'navbar'
@@ -37,7 +35,6 @@ function Mainpage() {
           <Switch>
             <Route exact path="/" component={Installations} />
             <Route path="/my-favorites" />
-            <Route path="/settings" />
           </Switch>
         </Field>
       </Router>

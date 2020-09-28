@@ -5,7 +5,7 @@ import styled from 'styled-components'
 
 const Wrapper = styled.div`
   background: #1c2237;
-  height: 80px;
+  height: 10vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -20,7 +20,6 @@ const Container = styled.div`
   height: 80px;
   z-index: 1;
   width: 100%;
-  max-width: 1300px;
   margin-right: auto;
   margin-left: auto;
   padding-right: 50px;
@@ -73,10 +72,6 @@ function Navbar() {
 
           <Link to="/my-favorites" className="nav-links">
             My Favorites
-          </Link>
-
-          <Link to="/settings" className="nav-links">
-            Settings
           </Link>
         </ul>
       </Container>
