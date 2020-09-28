@@ -29,6 +29,7 @@ const Wrapper = styled.div`
 `
 
 const Title = styled.h1`
+  align-self: center;
   padding-left: 5%;
   color: white;
 `
@@ -49,7 +50,6 @@ const Delete = styled.div`
 const Button = styled.button`
   padding: 10px;
   border-radius: 4px;
-  align-self: center;
 `
 const images = {
   earth: [EarthInstallation, EasterEarthInstallation, XmasEarthInstallation],
