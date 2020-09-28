@@ -1,13 +1,15 @@
 # Space Art - Gruppe 47
 Dette prosjektet inneholder fem ulike installasjoner med "space" som tema. Hver installasjon består av et SVG bilde med animasjon som har tilhørende dikt og musikk. Det er mulig å endre tema på siden til jul eller påske. Dette endrer bakgrunnsfargen til siden og setter inn ekstra jule/påske elementer i SVG bildet. Nettsiden er implementert som en Single Page Application (SPA) med React og bruk av router.
 - [Teknologi](#teknologi)
-- [React](#react)
-- [SVG og AJAX](### SVG og AJAX)
-- [HTML Web Storage](## HTML Web Storage)
-- [Responsive Web Design](## Responsive web design)
-- [Node.js og NPM](## Node.js og NPM)
-- [Testing](## Testing)
-- [Bruk av Git](## Bruk av Git)
+    - [React](#react)
+    - [SVG og AJAX](#svg-og-ajax)
+- [HTML Web Storage](#html-web-storage)
+- [Responsive Web Design](#responsive-web-design)
+- [Node.js og NPM](#Node.js-og-npm)
+- [Testing](#testing)
+- [Bruk av Git](#bruk-av-git)
+
+
 
 ## Teknologi
 
@@ -62,7 +64,7 @@ Local storage er brukt til å kunne favorisere et bilde med en favoritt-knapp og
  
 **Layout:** Vi har brukt en blanding av CSS-grid og CSS-flexbox for å få et flytende design. Installasjonssiden er strukturert ved grid-template-areas, noe som gjør det oversiktlig og enkelt å implementere ønsket struktur ved smale skjermstørrelser. For topp-baren (NavBar) og favoritt siden er det brukt flexbox for å plassere elementene. Nettsiden har tre forskjellige temaer, et hovedtema - verdensrommet - og to sesongbaserte tema som er jul og påske.
  <br>
-## Node.js og NPM
+## Nodejs og NPM
 node.js ble brukt til å sette opp utviklingss og servermiljøet for REACT-applikasjonen. 
  <br>
 ## Testing
