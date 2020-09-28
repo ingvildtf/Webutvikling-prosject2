@@ -25,7 +25,7 @@ const Wrapper = styled.div`
   background: #0b1226;
   padding-bottom: 20px;
   max-width: 100%;
-  height: 100vh;
+  height: 120vh;
 `
 
 const Title = styled.h1`
@@ -34,8 +34,12 @@ const Title = styled.h1`
 `
 const SVG = styled.div`
   padding: 2%;
-  max-width: 100%;
+  max-width: 60%;
+  max-height: 100%;
   color: white;
+  @media screen and (max-width: 1050px) {
+    max-width: 90vw;
+  }
 `
 
 const Delete = styled.div`
