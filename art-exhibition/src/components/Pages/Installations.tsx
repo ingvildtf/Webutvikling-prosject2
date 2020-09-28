@@ -256,6 +256,7 @@ function Installations() {
         >
           Xmas
         </Button>
+        <Button onClick={() => setFavorite(String(installations[click-1].imgtitle))} style={{ background: theme.buttonColor, color: theme.textColor }}>Favoritt</Button>
       </Navigation>
     </Wrapper>
   )

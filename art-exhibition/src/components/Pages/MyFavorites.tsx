@@ -1,7 +1,12 @@
 import React from 'react';
-import Button from '../Button';
+//import Button from '../Button';
+import styled from 'styled-components'
 
-
+const Button = styled.button`
+  padding: 10px;
+  border-radius: 4px;
+  align-self: center;
+`
 
 
 class DisplayFavorite extends React.Component{
@@ -10,7 +15,7 @@ class DisplayFavorite extends React.Component{
   };
 
   componentDidMount() {
-    this.setState({ username: localStorage.getItem("image") });
+    this.setState({ favorite: localStorage.getItem("image") });
   }
 
   componentWillUnmount() {
