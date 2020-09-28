@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import styled from 'styled-components'
 import Installations from './components/Pages/Installations'
 import MyFavorites from './components/Pages/MyFavorites'
+import { ThemeProvider } from './DisplayTheme'
 
 const Wrapper = styled.div`
   box-sizing: border-box;
@@ -27,19 +28,21 @@ const Field = styled.div<FieldProps>`
 
 function Mainpage() {
   return (
-    <Wrapper>
-      <Router>
-        <Field area="navbar">
-          <NavBar />
-        </Field>
-        <Field area="content">
-          <Switch>
-            <Route exact path="/" component={Installations} />
-            <Route path="/my-favorites" component={MyFavorites} />
-          </Switch>
-        </Field>
-      </Router>
-    </Wrapper>
+    <ThemeProvider>
+      <Wrapper>
+        <Router>
+          <Field area="navbar">
+            <NavBar />
+          </Field>
+          <Field area="content">
+            <Switch>
+              <Route exact path="/" component={Installations} />
+              <Route path="/my-favorites" component={MyFavorites} />
+            </Switch>
+          </Field>
+        </Router>
+      </Wrapper>
+    </ThemeProvider>
   )
 }
 

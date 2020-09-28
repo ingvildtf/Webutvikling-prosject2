@@ -3,13 +3,10 @@ import ReactDOM from 'react-dom'
 import './index.css'
 import * as serviceWorker from './serviceWorker'
 import Mainpage from './Mainpage'
-import { ThemeProvider } from './DisplayTheme'
 
 ReactDOM.render(
   <React.StrictMode>
-    <ThemeProvider>
-      <Mainpage />
-    </ThemeProvider>
+    <Mainpage />
   </React.StrictMode>,
   document.getElementById('root')
 )
