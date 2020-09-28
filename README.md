@@ -1,7 +1,12 @@
 # Space Art - Gruppe 47
 Dette prosjektet inneholder fem ulike installasjoner med "space" som tema. Hver installasjon består av et SVG bilde med animasjon som har tilhørende dikt og musikk. Det er mulig å endre tema på siden til jul eller påske. Dette endrer bakgrunnsfargen til siden og setter inn ekstra jule/påske elementer i SVG bildet. Nettsiden er implementert som en Single Page Application (SPA) med React og bruk av router.
+<<<<<<< HEAD
 - [Teknologi](## Teknologi)
 - [React](### React)
+=======
+- [Teknologi](#teknologi)
+- [React](#react)
+>>>>>>> master
 - [SVG og AJAX](### SVG og AJAX)
 - [HTML Web Storage](## HTML Web Storage)
 - [Responsive Web Design](## Responsive web design)
@@ -61,6 +66,7 @@ Local storage er brukt til å kunne favorisere et bilde med en favoritt-knapp og
 <br>
  
 **Layout:** Vi har brukt en blanding av CSS-grid og CSS-flexbox for å få et flytende design. Installasjonssiden er strukturert ved grid-template-areas, noe som gjør det oversiktlig og enkelt å implementere ønsket struktur ved smale skjermstørrelser. For topp-baren (NavBar) og favoritt siden er det brukt flexbox for å plassere elementene. Nettsiden har tre forskjellige temaer, et hovedtema - verdensrommet - og to sesongbaserte tema som er jul og påske.
+<<<<<<< HEAD
 
 
 ## Node.js og NPM
@@ -75,6 +81,20 @@ I tillegg til brukertesting av nettsiden har vi også laget et snapshot test. De
 Vi har testet for både funksjonalitet og responsivitet for alle enheter, og at dette fungerer likt for alle enheter. 
 For mobil og Ipad har vi testet for både horisontal og vertikal retning på skjermen. 
 
+=======
+ <br>
+## Node.js og NPM
+node.js ble brukt til å sette opp utviklingss og servermiljøet for REACT-applikasjonen. 
+ <br>
+## Testing
+Har testet prosjektet i forskjellige nettlesere, blant annet Chrome, Safari, Microsoft Edge og Firefox Developer Edition. Chrome og Safari har blitt brukt jevnlig under prosjektet for å teste funksjonaliteten og responsiviteten til nettsiden. For å teste for forskjellige skjermstørrelser og enheter har vi brukt chrome og firefox sitt utviklerverktøy, i tillegg til å kjøre nettsiden på egne mobiler. 
+<br>
+I tillegg til brukertesting av nettsiden har vi også laget et snapshot test. Denne testen sammenligner brukergrensesnittet med et skjermbilde. Dersom nettsiden avviker fra dette bilde, vil testen feile. Koden er hentet fra [YouTube](https://www.youtube.com/watch?v=KT4dFLrlS7A&ab_channel=phpstepbystep).
+<br>
+Vi har testet for både funksjonalitet og responsivitet for alle enheter, og at dette fungerer likt for alle enheter. 
+For mobil og Ipad har vi testet for både horisontal og vertikal retning på skjermen. 
+<br> 
+>>>>>>> master
  
 ## Bruk av Git
 For å samarbeide om prosjektet har vi brukt Git. Git gir mulighet til å lage issues, slik at det er lettere å fordele oppgaver og ha oversikt over progresjon i prosjektet. Vi har nummerert hver issue og gitt det et beskrivende navn, som også er brukt er brukt som branch navn. Branchen består av nummereringen til issuet og tilhørende navn. Vi har prøvd å følge git standarder og hatt en egen develop branch, som vi brancher ut i fra, og til slutt merget develop inn i master. 
