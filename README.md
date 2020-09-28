@@ -5,6 +5,7 @@ Dette prosjektet inneholder fem ulike installasjoner med "space" som tema. Hver 
 - [React](### React)
 =======
 - [Teknologi](#teknologi)
+<<<<<<< HEAD
 - [React](#react)
 >>>>>>> master
 - [SVG og AJAX](### SVG og AJAX)
@@ -13,6 +14,17 @@ Dette prosjektet inneholder fem ulike installasjoner med "space" som tema. Hver 
 - [Node.js og NPM](## Node.js og NPM)
 - [Testing](## Testing)
 - [Bruk av Git](## Bruk av Git)
+=======
+    - [React](#react)
+    - [SVG og AJAX](#svg-og-ajax)
+- [HTML Web Storage](#html-web-storage)
+- [Responsive Web Design](#responsive-web-design)
+- [Node.js og NPM](#Node.js-og-npm)
+- [Testing](#testing)
+- [Bruk av Git](#bruk-av-git)
+
+
+>>>>>>> master
 
 ## Teknologi
 
@@ -83,7 +95,7 @@ For mobil og Ipad har vi testet for både horisontal og vertikal retning på skj
 
 =======
  <br>
-## Node.js og NPM
+## Nodejs og NPM
 node.js ble brukt til å sette opp utviklingss og servermiljøet for REACT-applikasjonen. 
  <br>
 ## Testing
