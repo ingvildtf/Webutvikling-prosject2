@@ -39,7 +39,7 @@ const Wrapper = styled.div<ThemeProps>`
     'svg     poem'
     'buttons sound';
 
-  @media screen and (max-width: 1150px) {
+  @media screen and (max-width: 750px) {
     grid-template-rows: repeat(5, min-content);
     height: auto;
     overflow: auto;

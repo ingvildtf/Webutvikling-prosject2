@@ -20,7 +20,24 @@ import XmasSunInstallation from '../../images/xmas/Xmas_Sun'
 import EasterStarsInstallation from '../../images/easter/Easter_Stars'
 
 const Wrapper = styled.div`
-  display: grid;
+  display: flex;
+  flex-direction: column;
+  background: #0b1226;
+  padding-bottom: 20px;
+`
+
+const Title = styled.h1`
+  padding-left: 5%;
+  color: white;
+`
+const SVG = styled.div`
+  padding: 2%;
+  max-width: 100%;
+  color: white;
+`
+
+const Delete = styled.div`
+  align-self: center;
 `
 
 const Button = styled.button`
@@ -62,31 +79,18 @@ function componentWillUnmount() {
 }
 
 class DisplayFavorite extends React.Component {
-  /*state = {
-    favorite: '',
-  }
-
-  componentDidMount() {
-    this.setState({ favorite: localStorage.getItem('image') })
-  }
-
-  componentWillUnmount() {
-    window.localStorage.removeItem('image')
-  }*/
-
   render() {
     return (
       <Wrapper>
-        <div className="App"></div>
-        <h1>Favoritisert installasjon</h1>
-        <div>{Image === null ? 'Du har ingen favoritt enda' : <Image />}</div>
-        <div>
+        <Title>Favoritisert installasjon</Title>
+        <SVG>{Image === null ? 'Du har ingen favoritt enda' : <Image />}</SVG>
+        <Delete>
           {Image === null ? (
             ''
           ) : (
             <Button onClick={componentWillUnmount}> Slett favoritt </Button>
           )}
-        </div>
+        </Delete>
       </Wrapper>
     )
   }
