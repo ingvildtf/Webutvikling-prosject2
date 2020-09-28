@@ -40,6 +40,7 @@ export const Wrapper = styled.div<ThemeProps>`
   display: grid;
   background: #242424;
   grid-template-rows: min-content min-content auto;
+  grid-template-columns: 1fr 1fr;
   height: 90vh;
   grid-gap: 10px;
   grid-template-areas:
@@ -47,8 +48,9 @@ export const Wrapper = styled.div<ThemeProps>`
     'svg     poem'
     'buttons sound';
 
-  @media screen and (max-width: 1150px) {
+  @media screen and (max-width: 1050px) {
     grid-template-rows: repeat(5, min-content);
+    grid-template-columns: 1fr;
     height: auto;
     overflow: auto;
     grid-template-areas:
@@ -70,7 +72,7 @@ const Title = styled.h3<ThemeProps>`
 `
 const Text = styled.div<ThemeProps>`
   padding: 20px;
-  font-size: min(max(12px, 6vw), 16px);
+  font-size: min(max(12px, 4vw), 20px);
   color: blue;
   grid-area: poem;
   text-align: center;
@@ -84,7 +86,13 @@ const Sound = styled.div`
 `
 const SVG = styled.div`
   grid-area: svg;
-  max-height: 100vh;
+  max-height: 100%;
+  max-width: 100%;
+  min-width: 0;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  margin: 0;
 `
 
 const Navigation = styled.div<ThemeProps>`
@@ -140,7 +148,7 @@ function Installations() {
       id: 3,
       title: 'Satellite',
       imgtitle: images.satellite[imageTheme],
-      music: SatelliteMusic ,
+      music: SatelliteMusic,
       poem: 'https://poetrydb.org/lines,linecount/sky;12/lines',
     },
     {
