@@ -1,5 +1,5 @@
 import React from 'react'
-import {ReactComponent as Satellite} from '../space/satellite2.svg';
+import { ReactComponent as Satellite } from '../space/satellite.svg'
 import styled from 'styled-components'
 import { keyframes } from 'styled-components'
 
@@ -12,9 +12,7 @@ from {
   to {
     transform: rotate(360deg);
   }
-`;
-
-
+`
 
 const transparent1 = keyframes`
     20%   { 
@@ -23,7 +21,7 @@ const transparent1 = keyframes`
     90% { 
         opacity: 1; 
     }
-`;
+`
 
 const transparent2 = keyframes`
     10%   { 
@@ -32,7 +30,7 @@ const transparent2 = keyframes`
     80% { 
         opacity: 1; 
     }
-`;
+`
 
 const transparent3 = keyframes`
     0%   { 
@@ -41,44 +39,35 @@ const transparent3 = keyframes`
     70% { 
         opacity: 1; 
     }
-`;
+`
 
-
-
- 
 const StyledSatellite = styled(Satellite)`
-
-.sat{ 
-    animation: ${rotate} infinite 9s linear; 
+  .sat {
+    animation: ${rotate} infinite 9s linear;
     transform-origin: center;
-    transform-box:fill-box;
-    
-} 
+    transform-box: fill-box;
+  }
 
-.signal1{
+  .signal1 {
     animation: ${transparent1} infinite 4s;
-    
-}
-.signal2{
+  }
+  .signal2 {
     animation: ${transparent2} infinite 4s;
-    
-}
+  }
 
-.signal3{
+  .signal3 {
     animation: ${transparent3} infinite 4s;
-    
+  }
+`
+
+class SatelliteInstallation extends React.Component {
+  render() {
+    return (
+      <div>
+        <StyledSatellite />
+      </div>
+    )
+  }
 }
 
-`;
-
-class SatelliteInstallation extends React.Component{
-    render(){
-    return(
-        <div>
-            <StyledSatellite/>
-        </div>
-    );
-    }
-}
-
-export default SatelliteInstallation; 
+export default SatelliteInstallation

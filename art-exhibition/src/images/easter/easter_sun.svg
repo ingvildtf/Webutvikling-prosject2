@@ -15,7 +15,7 @@
 	.seaster9{fill:#48B7D3;}
 	.seaster10{fill:#4DB9AE;}
 </style>
-<rect class="seaster0" width="1400" height="980"/>
+<rect class="seaster0" width="100%" height="100%"/>
 <g>
 	<g>
 		<path id="orange" class="seaster1" d="M902.92,570.75c2.83-9.04,10.13-15.52,19.32-18.43c-7.26-6.53-11.37-15.53-10.42-24.98

@@ -1,10 +1,8 @@
 //import React from 'react';
 import React from 'react'
-import {ReactComponent as Space} from '../space/rocket.svg';
+import { ReactComponent as Space } from '../space/rocket.svg'
 import styled from 'styled-components'
 import { keyframes } from 'styled-components'
-
-
 
 const move = keyframes`
 
@@ -15,9 +13,7 @@ fom{
 to{
     transform: translateX(30%)
 }
-`;
-
-
+`
 
 const pulse = keyframes`
 0% {
@@ -32,31 +28,26 @@ const pulse = keyframes`
   fill:#FADA5E;
   stroke-width:10px
 }
-`;
-
-
+`
 
 const StyledRocket = styled(Space)`
-
-.rocket{
+  .rocket {
     animation: ${move} 1s ease-in-out infinite alternate;
-}
+  }
 
-.star{
+  .star {
     animation: ${pulse} infinite 4s linear;
-    
-}
-`;
+  }
+`
 
-
-class Rocket extends React.Component{
-    render(){
-    return(
-        <div>
-            <StyledRocket/>
-        </div>
-    );
-    }
+class Rocket extends React.Component {
+  render() {
+    return (
+      <div>
+        <StyledRocket />
+      </div>
+    )
+  }
 }
 
-export default Rocket; 
+export default Rocket

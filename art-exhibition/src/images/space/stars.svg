@@ -8,7 +8,7 @@
 	.stars2{fill:#FFD800;}
 	.stars3{fill:#FFED80;}
 </style>
-<rect class="stars0" width="1400" height="980"/>
+<rect class="stars0" width="100%" height="100%"/>
 <g>
 	<g>
 		<g>
