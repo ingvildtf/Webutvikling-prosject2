@@ -1,6 +1,6 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
-import Mainpage from './mainpage'
+import Mainpage from './Mainpage'
 
 test('First snapshot test', () => {
   const component = renderer.create(<Mainpage />)
