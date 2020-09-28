@@ -41,7 +41,7 @@ export const Wrapper = styled.div<ThemeProps>`
   background: #242424;
   grid-template-rows: min-content min-content auto;
   grid-template-columns: 1fr 1fr;
-  height: 90vh;
+  height: 100vh;
   grid-gap: 10px;
   grid-template-areas:
     'title   title'
@@ -97,8 +97,11 @@ const SVG = styled.div`
 
 const Navigation = styled.div<ThemeProps>`
   grid-area: buttons;
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 5px;
+  justify-content: center;
+  align-content: center;
   margin: 20px;
 `
 const Button = styled.button<ThemeProps>`
@@ -106,19 +109,19 @@ const Button = styled.button<ThemeProps>`
   border-radius: 4px;
   align-self: center;
 `
-function Installations() {
-  const images = {
-    earth: [EarthInstallation, EasterEarthInstallation, XmasEarthInstallation],
-    rocket: [Rocket, EasterStarRocket, XmasRocketInstallation],
-    satellite: [
-      SatelliteInstallation,
-      SatelliteEasterInstallation,
-      SatelliteXmasInstallation,
-    ],
-    stars: [StarsInstallation, EasterStarsInstallation, XmasStarsInstallation],
-    sun: [SunInstallation, EasterSunInstallation, XmasSunInstallation],
-  }
+const images = {
+  earth: [EarthInstallation, EasterEarthInstallation, XmasEarthInstallation],
+  rocket: [Rocket, EasterStarRocket, XmasRocketInstallation],
+  satellite: [
+    SatelliteInstallation,
+    SatelliteEasterInstallation,
+    SatelliteXmasInstallation,
+  ],
+  stars: [StarsInstallation, EasterStarsInstallation, XmasStarsInstallation],
+  sun: [SunInstallation, EasterSunInstallation, XmasSunInstallation],
+}
 
+function Installations() {
   //lagrer hvilket tema man har huket av i session storage
   const index =
     sessionStorage.getItem('imageTheme') === null
@@ -166,6 +169,7 @@ function Installations() {
       poem: 'https://poetrydb.org/title,linecount/sun;12/lines',
     },
   ]
+
   //Setter state til clik, her kan man også bruke tekst verdier
   const [click, setClick] = useState(1)
   //Funksjon for å toggle mellom bildene, ved å trykke på next/back button, vet å oppdatere staten til click
@@ -202,6 +206,10 @@ function Installations() {
     setImageTheme(2)
   }
 
+  function updateFavorite(number: number) {
+    localStorage.setItem('image', String(number))
+  }
+
   return (
     <Wrapper
       style={{ background: theme.backgroundColor, color: theme.textColor }}
@@ -213,7 +221,7 @@ function Installations() {
       </Title>
       <SVG>
         {installations.map(index =>
-          index.id === click ? <index.imgtitle /> : null
+          index.id === click ? <index.imgtitle key={index.id} /> : null
         )}
       </SVG>
       <Text
@@ -221,7 +229,7 @@ function Installations() {
       >
         {installations.map(index =>
           index.id === click ? (
-            <DisplayPoem poemTheme={index.poem as string} />
+            <DisplayPoem poemTheme={index.poem as string} key={index.id} />
           ) : null
         )}
         {/*<Poetry></Poetry> {/* Poetry example*/}
@@ -229,7 +237,7 @@ function Installations() {
       <Sound>
         {/*går gjennom listen for å hente elementet som har samme id som clik  */}
         {installations.map(index =>
-          index.id === click ? <index.music /> : null
+          index.id === click ? <index.music key={index.id} /> : null
         )}
       </Sound>
       <Navigation
@@ -247,6 +255,12 @@ function Installations() {
           onClick={handleNextClick}
         >
           Next
+        </Button>
+        <Button
+          onClick={() => updateFavorite(installations[click - 1].id)}
+          style={{ background: theme.buttonColor, color: theme.textColor }}
+        >
+          Favoritt
         </Button>
         <Button
           style={{ background: theme.buttonColor, color: theme.textColor }}
