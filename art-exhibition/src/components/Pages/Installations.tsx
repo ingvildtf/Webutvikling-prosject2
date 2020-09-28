@@ -34,14 +34,14 @@ interface ThemeProps {
   style?: React.CSSProperties
 }
 
-const Wrapper = styled.div<ThemeProps>`
+export const Wrapper = styled.div<ThemeProps>`
   margin: 0;
   padding: 0 5% 0 5%;
   display: grid;
   background: #242424;
   grid-template-rows: min-content min-content auto;
   grid-template-columns: 1fr 1fr;
-  height: 90vh;
+  height: 100vh;
   grid-gap: 10px;
   grid-template-areas:
     'title   title'
@@ -97,8 +97,11 @@ const SVG = styled.div`
 
 const Navigation = styled.div<ThemeProps>`
   grid-area: buttons;
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 5px;
+  justify-content: center;
+  align-content: center;
   margin: 20px;
 `
 const Button = styled.button<ThemeProps>`
@@ -106,7 +109,7 @@ const Button = styled.button<ThemeProps>`
   border-radius: 4px;
   align-self: center;
 `
-export const images = {
+const images = {
   earth: [EarthInstallation, EasterEarthInstallation, XmasEarthInstallation],
   rocket: [Rocket, EasterStarRocket, XmasRocketInstallation],
   satellite: [
@@ -118,8 +121,6 @@ export const images = {
   sun: [SunInstallation, EasterSunInstallation, XmasSunInstallation],
 }
 
-//liste som inneholder informasjon om installasjonene, her kan du eventuelt endre imgtitle til en verdi, isteden for hvert bilde og da kan du endre denne verdien ved å bruke state og switch
-
 function Installations() {
   //lagrer hvilket tema man har huket av i session storage
   const index =
@@ -130,16 +131,7 @@ function Installations() {
   const [imageTheme, setImageTheme] = useState(index)
   sessionStorage.setItem('imageTheme', String(imageTheme))
 
-  //const favorite =  localStorage.getItem(click)
-
-  /*const favorite =
-    localStorage.getItem('image') === null
-      ? 0
-      : Number(localStorage.getItem('image'))
-  const [image, setFavorite] = useState(favorite)
-
-  localStorage.setItem('image', String(image))*/
-
+  //liste som inneholder informasjon om installasjonene, her kan du eventuelt endre imgtitle til en verdi, isteden for hvert bilde og da kan du endre denne verdien ved å bruke state og switch
   const installations = [
     {
       id: 1,
@@ -265,6 +257,12 @@ function Installations() {
           Next
         </Button>
         <Button
+          onClick={() => updateFavorite(installations[click - 1].id)}
+          style={{ background: theme.buttonColor, color: theme.textColor }}
+        >
+          Favoritt
+        </Button>
+        <Button
           style={{ background: theme.buttonColor, color: theme.textColor }}
           onClick={spaceFunction}
         >
@@ -281,12 +279,6 @@ function Installations() {
           onClick={christmasFunction}
         >
           Xmas
-        </Button>
-        <Button
-          onClick={() => updateFavorite(installations[click - 1].id)}
-          style={{ background: theme.buttonColor, color: theme.textColor }}
-        >
-          Favoritt
         </Button>
       </Navigation>
     </Wrapper>
