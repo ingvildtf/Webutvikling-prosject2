@@ -1,9 +1,7 @@
 import React from 'react'
-import {ReactComponent as Sun} from '../space/sun.svg';
+import { ReactComponent as Sun } from '../space/sun.svg'
 import styled from 'styled-components'
 import { keyframes } from 'styled-components'
-
-
 
 const rotate = keyframes`
 from {
@@ -14,10 +12,7 @@ from {
   to {
     transform: rotate(360deg);
   }
-`;
-
-
-
+`
 
 const pulse = keyframes`
 0% {
@@ -32,35 +27,28 @@ const pulse = keyframes`
   fill:#FADA5E;
   stroke-width:10px
 }
-`;
-
-
+`
 
 const StyledSun = styled(Sun)`
-
-
-#orange{
-    animation: ${rotate} infinite 20s linear; 
+  #orange {
+    animation: ${rotate} infinite 20s linear;
     transform-origin: center;
-    transform-box:fill-box;
-    
-}
+    transform-box: fill-box;
+  }
 
-#yellow{
+  #yellow {
     animation: ${pulse} infinite 4s linear;
-    
-}
-`;
+  }
+`
 
-
-class SunInstallation extends React.Component{
-    render(){
-    return(
-        <div>
-            <StyledSun/>
-        </div>
-    );
-    }
+class SunInstallation extends React.Component {
+  render() {
+    return (
+      <div>
+        <StyledSun />
+      </div>
+    )
+  }
 }
 
-export default SunInstallation; 
+export default SunInstallation

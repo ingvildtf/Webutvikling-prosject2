@@ -6,52 +6,29 @@ import styled from 'styled-components'
 const Wrapper = styled.div`
   background: #1c2237;
   height: 10vh;
-  display: flex;
-  justify-content: center;
   align-items: center;
   font-size: 1.2rem;
-  position: sticky;
-  top: 0;
-  z-index: 999;
 `
+
 const Container = styled.div`
   display: flex;
+  align-items: center;
   justify-content: space-between;
-  height: 80px;
-  z-index: 1;
-  width: 100%;
-  margin-right: auto;
-  margin-left: auto;
-  padding-right: 50px;
-  padding-left: 50px;
+  height: 10vh;
+  width: 90vw;
+  padding-left: 20px;
 
-  .nav-logo {
+  .logo {
     color: #fff;
-    cursor: pointer;
+    padding: 10px 20px;
+
     text-decoration: none;
-    font-size: 2rem;
-    padding-top: 15px;
+    font-size: 25px;
   }
 
-  .nav-menu {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-  }
-
-  .nav-links {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    padding: 0.5rem 1rem;
-    height: 100%;
+  .link {
     color: #fff;
-    border-bottom: 2px solid transparent;
-  }
-
-  .nav-links:hover {
-    border-bottom: 2px solid 'f00946';
+    text-decoration: none;
   }
 `
 
@@ -60,20 +37,15 @@ function Navbar() {
     //lager navigasjonsbaren øverst på siden
     <Wrapper>
       <Container className="navbar-container container">
-        <Link to="/" className="nav-logo">
-          SPACE
+        <Link className="logo" to="/">
+          SPACE ART
         </Link>
 
         {/**Setter navigasjonen til å være drop meny når siden blir under en størrelse */}
-        <ul className={'nav-menu'}>
-          <Link to="/" className="nav-links">
-            Home
-          </Link>
 
-          <Link to="/my-favorites" className="nav-links">
-            My Favorites
-          </Link>
-        </ul>
+        <Link className="link" to="/my-favorites">
+          My Favorites
+        </Link>
       </Container>
     </Wrapper>
   )

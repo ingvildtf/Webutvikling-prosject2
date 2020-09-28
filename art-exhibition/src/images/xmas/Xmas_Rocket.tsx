@@ -1,9 +1,7 @@
 import React from 'react'
-import {ReactComponent as XmasRocket} from '../xmas/xmas_rocket.svg'
+import { ReactComponent as XmasRocket } from '../xmas/xmas_rocket.svg'
 import styled from 'styled-components'
 import { keyframes } from 'styled-components'
-
-
 
 const move = keyframes`
 
@@ -14,9 +12,7 @@ fom{
 to{
     transform: translateX(30%)
 }
-`;
-
-
+`
 
 const pulse = keyframes`
 0% {
@@ -31,37 +27,29 @@ const pulse = keyframes`
   fill:#FADA5E;
   stroke-width:10px
 }
-`;
-
-
-
-
+`
 
 const StyledXmasRocket = styled(XmasRocket)`
-
-.rocket{
+  .rocket {
     animation: ${move} 1s ease-in-out infinite alternate;
-}
-.scarf{
+  }
+  .scarf {
     animation: ${move} 1s ease-in-out infinite alternate;
-}
+  }
 
-.star{
+  .star {
     animation: ${pulse} infinite 4s linear;
-    
-}
-`;
+  }
+`
 
-
-class XmasRocketInstallation extends React.Component{
-    render(){
-    return(
-        <div>
-            <StyledXmasRocket/>
-        </div>
-    );
-    }
+class XmasRocketInstallation extends React.Component {
+  render() {
+    return (
+      <div>
+        <StyledXmasRocket />
+      </div>
+    )
+  }
 }
 
-export default XmasRocketInstallation ; 
-
+export default XmasRocketInstallation
