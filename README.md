@@ -68,7 +68,7 @@ node.js ble brukt til å sette opp utviklingss og servermiljøet for REACT-appli
 ## Testing
 Har testet prosjektet i forskjellige nettlesere, blant annet Chrome, Safari, Microsoft Edge og Firefox Developer Edition. Chrome og Safari har blitt brukt jevnlig under prosjektet for å teste funksjonaliteten og responsiviteten til nettsiden. For å teste for forskjellige skjermstørrelser og enheter har vi brukt chrome og firefox sitt utviklerverktøy, i tillegg til å kjøre nettsiden på egne mobiler. 
 <br>
-I tillegg til brukertesting av nettsiden har vi også laget et snapshot test. Denne testen sammenligner brukergrensesnittet med et skjermbilde. Dersom nettsiden avviker fra dette bilde, vil testen feile. Koden er hentet fra: https://www.youtube.com/watch?v=KT4dFLrlS7A&ab_channel=phpstepbystep
+I tillegg til brukertesting av nettsiden har vi også laget et snapshot test. Denne testen sammenligner brukergrensesnittet med et skjermbilde. Dersom nettsiden avviker fra dette bilde, vil testen feile. Koden er hentet fra [YouTube](https://www.youtube.com/watch?v=KT4dFLrlS7A&ab_channel=phpstepbystep).
 <br>
 Vi har testet for både funksjonalitet og responsivitet for alle enheter, og at dette fungerer likt for alle enheter. 
 For mobil og Ipad har vi testet for både horisontal og vertikal retning på skjermen. 
