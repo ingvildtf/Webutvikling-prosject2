@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 
 import EarthInstallation from '../../images/space/Earth'
@@ -25,12 +25,13 @@ interface ThemeProps {
   style?: React.CSSProperties
 }
 
-export const Wrapper = styled.div<ThemeProps>`
+const Wrapper = styled.div<ThemeProps>`
   margin: 0;
   padding: 0 5% 0 5%;
   display: grid;
   background: #242424;
   grid-template-rows: min-content min-content auto;
+  grid-template-columns: 1fr 1fr;
   height: 90vh;
   grid-gap: 10px;
   grid-template-areas:
@@ -75,7 +76,7 @@ const Sound = styled.div`
 `
 const SVG = styled.div`
   grid-area: svg;
-  max-height: 100vh;
+  max-height: 100%;
 `
 
 const Navigation = styled.div<ThemeProps>`
@@ -89,15 +90,21 @@ const Button = styled.button<ThemeProps>`
   border-radius: 4px;
   align-self: center;
 `
-function Installations() {
-  const images = {
-    earth: [EarthInstallation, EasterEarthInstallation, XmasEarthInstallation],
-    rocket: [Rocket, EasterStarRocket, XmasRocketInstallation],
-    satellite: [SatelliteInstallation,SatelliteEasterInstallation,SatelliteXmasInstallation,],
-    stars: [StarsInstallation, EasterStarsInstallation, XmasStarsInstallation],
-    sun: [SunInstallation, EasterSunInstallation, XmasSunInstallation],
-  }
+export const images = {
+  earth: [EarthInstallation, EasterEarthInstallation, XmasEarthInstallation],
+  rocket: [Rocket, EasterStarRocket, XmasRocketInstallation],
+  satellite: [
+    SatelliteInstallation,
+    SatelliteEasterInstallation,
+    SatelliteXmasInstallation,
+  ],
+  stars: [StarsInstallation, EasterStarsInstallation, XmasStarsInstallation],
+  sun: [SunInstallation, EasterSunInstallation, XmasSunInstallation],
+}
 
+//liste som inneholder informasjon om installasjonene, her kan du eventuelt endre imgtitle til en verdi, isteden for hvert bilde og da kan du endre denne verdien ved å bruke state og switch
+
+function Installations() {
   //lagrer hvilket tema man har huket av i session storage
   const index =
     sessionStorage.getItem('imageTheme') === null
@@ -107,18 +114,16 @@ function Installations() {
   const [imageTheme, setImageTheme] = useState(index)
   sessionStorage.setItem('imageTheme', String(imageTheme))
 
+  //const favorite =  localStorage.getItem(click)
 
+  /*const favorite =
+    localStorage.getItem('image') === null
+      ? 0
+      : Number(localStorage.getItem('image'))
+  const [image, setFavorite] = useState(favorite)
 
-  
- //const favorite =  localStorage.getItem(click)
- const favorite = localStorage.getItem('image') === undefined ? '': localStorage.getItem('image')
- const [image, setFavorite] = useState(String(favorite))
- localStorage.setItem('image', image)
+  localStorage.setItem('image', String(image))*/
 
-  
-
-
-  //liste som inneholder informasjon om installasjonene, her kan du eventuelt endre imgtitle til en verdi, isteden for hvert bilde og da kan du endre denne verdien ved å bruke state og switch
   const installations = [
     {
       id: 1,
@@ -156,6 +161,7 @@ function Installations() {
       poem: 'https://poetrydb.org/title,linecount/sun;12/lines',
     },
   ]
+
   //Setter state til clik, her kan man også bruke tekst verdier
   const [click, setClick] = useState(1)
   //Funksjon for å toggle mellom bildene, ved å trykke på next/back button, vet å oppdatere staten til click
@@ -192,6 +198,10 @@ function Installations() {
     setImageTheme(2)
   }
 
+  function updateFavorite(number: number) {
+    localStorage.setItem('image', String(number))
+  }
+
   return (
     <Wrapper
       style={{ background: theme.backgroundColor, color: theme.textColor }}
@@ -203,7 +213,7 @@ function Installations() {
       </Title>
       <SVG>
         {installations.map(index =>
-          index.id === click ? <index.imgtitle /> : null
+          index.id === click ? <index.imgtitle key={index.id} /> : null
         )}
       </SVG>
       <Text
@@ -211,7 +221,7 @@ function Installations() {
       >
         {installations.map(index =>
           index.id === click ? (
-            <DisplayPoem poemTheme={index.poem as string } key={index.id}/>
+            <DisplayPoem poemTheme={index.poem as string} key={index.id} />
           ) : null
         )}
         {/*<Poetry></Poetry> {/* Poetry example*/}
@@ -219,7 +229,7 @@ function Installations() {
       <Sound>
         {/*går gjennom listen for å hente elementet som har samme id som clik  */}
         {installations.map(index =>
-          index.id === click ? <index.imgtitle key={index.id}  /> : null
+          index.id === click ? <index.music key={index.id} /> : null
         )}
       </Sound>
       <Navigation
@@ -256,7 +266,12 @@ function Installations() {
         >
           Xmas
         </Button>
-        <Button onClick={() => setFavorite(String(installations[click-1].imgtitle))} style={{ background: theme.buttonColor, color: theme.textColor }}>Favoritt</Button>
+        <Button
+          onClick={() => updateFavorite(installations[click - 1].id)}
+          style={{ background: theme.buttonColor, color: theme.textColor }}
+        >
+          Favoritt
+        </Button>
       </Navigation>
     </Wrapper>
   )
