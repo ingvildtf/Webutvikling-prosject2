@@ -1,4 +1,7 @@
 # Space Art - Gruppe 47
+**OBS!** Det er viktig å være i ***art-exhibition***-mappen når man kjører prosjektet. 
+<br>
+
 Dette prosjektet inneholder fem ulike installasjoner med "space" som tema. Hver installasjon består av et SVG bilde med animasjon som har tilhørende dikt og musikk. Det er mulig å endre tema på siden til jul eller påske. Dette endrer bakgrunnsfargen til siden og setter inn ekstra jule/påske elementer i SVG bildet. Nettsiden er implementert som en Single Page Application (SPA) med React og bruk av router.
 
 - [Teknologi](#teknologi) 
